@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
-import 'package:shopify/consts/colors.dart';
+import 'package:mali_safi/consts/colors.dart';
 
 class CartFull extends StatefulWidget {
   const CartFull({Key key}) : super(key: key);

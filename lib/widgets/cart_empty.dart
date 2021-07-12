@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shopify/consts/colors.dart';
+import 'package:mali_safi/consts/colors.dart';
 
 class CartEmpty extends StatelessWidget {
   const CartEmpty({Key key}) : super(key: key);

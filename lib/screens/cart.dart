@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:shopify/consts/colors.dart';
-import 'package:shopify/consts/my_icons.dart';
-import 'package:shopify/widgets/cart_empty.dart';
-import 'package:shopify/widgets/cart_full.dart';
+import 'package:mali_safi/consts/colors.dart';
+import 'package:mali_safi/consts/my_icons.dart';
+import 'package:mali_safi/widgets/cart_empty.dart';
+import 'package:mali_safi/widgets/cart_full.dart';
 
 class CartScreen extends StatelessWidget {
   const CartScreen({Key key}) : super(key: key);
