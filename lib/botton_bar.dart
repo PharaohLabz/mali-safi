@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mali_safi/screens/cart.dart';
 import 'package:mali_safi/screens/favourite.dart';
 import 'package:mali_safi/screens/home.dart';
-import 'package:mali_safi/screens/search.dart';
+import 'package:mali_safi/screens/explore.dart';
 import 'package:mali_safi/screens/user_info.dart';
 
 import 'consts/my_icons.dart';
@@ -45,7 +45,7 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
     super.initState();
   }
 
-  int _selectedIndex = 4;
+  int _selectedIndex = 0;
   void _selectedPage(int index) {
     setState(() {
       _selectedIndex = index;
@@ -70,7 +70,7 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
               onTap: _selectedPage,
               backgroundColor: Theme.of(context).primaryColor,
               unselectedItemColor: Colors.black.withOpacity(0.8),
-              selectedItemColor: Colors.grey,
+              selectedItemColor: Colors.black.withOpacity(0.6),
               currentIndex: _selectedIndex,
               items: [
                 BottomNavigationBarItem(
@@ -78,11 +78,13 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
                     tooltip: 'Home',
                     label: 'Home'),
                 BottomNavigationBarItem(
-                    icon: Icon(MyAppIcons.search),
-                    tooltip: 'Search',
-                    label: 'Search'),
+                    icon: Icon(MyAppIcons.explore),
+                    tooltip: 'Explore',
+                    label: 'Explore'),
                 BottomNavigationBarItem(
-                    icon: Icon(MyAppIcons.bag), tooltip: 'Cart', label: 'Cart'),
+                    icon: Icon(MyAppIcons.bag2),
+                    tooltip: 'Cart',
+                    label: 'Cart'),
                 BottomNavigationBarItem(
                     icon: Icon(MyAppIcons.favorite),
                     tooltip: 'Favorite',

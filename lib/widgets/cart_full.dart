@@ -12,170 +12,100 @@ class CartFull extends StatefulWidget {
 class _CartFullState extends State<CartFull> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 130.0,
-      margin: const EdgeInsets.all(10),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.only(
-          bottomRight: const Radius.circular(16.0),
-          bottomLeft: const Radius.circular(16.0),
-        ),
-        color: Colors.blueGrey.withOpacity(0.4),
-      ),
-      child: Row(
-        children: [
-          Container(
-            //margin: EdgeInsets.all(8),
-            width: 130,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage('assets/images/CatWatches.jpg'),
-                fit: BoxFit.fill,
-              ),
-            ),
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 8),
+      child: Container(
+        height: 100.0,
+        margin: const EdgeInsets.all(10),
+        decoration: BoxDecoration(
+          /* borderRadius: BorderRadius.only(
+            bottomRight: const Radius.circular(16.0),
+            bottomLeft: const Radius.circular(16.0),
+          ), */
+          border: Border(
+            bottom: BorderSide(color: Colors.grey, width: 0.5),
           ),
-          Flexible(
-            child: Container(
-              child: Padding(
-                padding: const EdgeInsets.all(2.0),
-                child: Column(
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Flexible(
-                          child: Text(
-                            'Title',
-                            maxLines: 2,
-                            overflow: TextOverflow.ellipsis,
-                            style: TextStyle(
-                                fontWeight: FontWeight.w600, fontSize: 15),
-                          ),
-                        ),
-                        Material(
-                          color: Colors.transparent,
-                          child: InkWell(
-                            borderRadius: BorderRadius.circular(32.0),
-                            onTap: () {},
-                            //splashColor: ,
-                            child: Container(
-                              height: 50,
-                              width: 50,
-                              child: Icon(
-                                Entypo.cross,
-                                color: Colors.red,
-                                size: 22,
-                              ),
-                            ),
-                          ),
-                        )
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        Text('Price'),
-                        SizedBox(
-                          width: 5,
-                        ),
-                        Text(
-                          'Ksh 450',
-                          style: TextStyle(
-                              fontSize: 16, fontWeight: FontWeight.w600),
-                        ),
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        Text('Sub Total:'),
-                        SizedBox(
-                          width: 5,
-                        ),
-                        Text(
-                          'Ksh450',
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w600,
-                            color: ColorsConsts.subTitle,
-                          ),
-                        ),
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        Text(
-                          'Ships Free',
-                          style: TextStyle(
-                            color: Colors.black54,
-                          ),
-                        ),
-                        Spacer(),
-                        Material(
-                          color: Colors.transparent,
-                          child: InkWell(
-                            borderRadius: BorderRadius.circular(32.0),
-                            onTap: () {},
-                            //splashColor: ,
-                            child: Container(
-                              child: Padding(
-                                padding: const EdgeInsets.all(5.0),
-                                child: Icon(
-                                  Entypo.minus,
-                                  color: Colors.red,
-                                  size: 22,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Card(
-                          elevation: 12,
-                          child: Container(
-                            width: MediaQuery.of(context).size.width * 0.12,
-                            padding: const EdgeInsets.all(8),
-                            decoration: BoxDecoration(
-                              gradient: LinearGradient(
-                                colors: [
-                                  ColorsConsts.gradiendLStart,
-                                  ColorsConsts.gradiendLEnd,
-                                ],
-                                stops: [
-                                  0.0,
-                                  0.7,
-                                ],
-                              ),
-                            ),
-                            child: Text(
-                              '20',
-                              textAlign: TextAlign.center,
-                            ),
-                          ),
-                        ),
-                        Material(
-                          color: Colors.transparent,
-                          child: InkWell(
-                            borderRadius: BorderRadius.circular(32.0),
-                            onTap: () {},
-                            //splashColor: ,
-                            child: Container(
-                              child: Padding(
-                                padding: const EdgeInsets.all(5.0),
-                                child: Icon(
-                                  Entypo.plus,
-                                  color: Colors.green,
-                                  size: 22,
-                                ),
-                              ),
-                            ),
-                          ),
-                        )
-                      ],
-                    ),
-                  ],
+          color: Colors.transparent,
+        ),
+        child: Row(
+          children: [
+            Container(
+              //margin: EdgeInsets.all(8),
+              width: 100,
+              height: 95,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                image: DecorationImage(
+                  image: AssetImage('assets/images/CatShoes.jpg'),
+                  fit: BoxFit.fill,
                 ),
               ),
             ),
-          )
-        ],
+            Flexible(
+              child: Container(
+                child: Padding(
+                  padding: const EdgeInsets.all(2.0),
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(top: 9),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Long sleeve Top',
+                              maxLines: 2,
+                              overflow: TextOverflow.ellipsis,
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w600, fontSize: 22),
+                            ),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            Text(
+                              'Ksh 450',
+                              textAlign: TextAlign.start,
+                              style: TextStyle(
+                                  fontSize: 16, fontWeight: FontWeight.w600),
+                            ),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            Text(
+                              'Subtitle goes here',
+                              maxLines: 2,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                            SizedBox(
+                              width: 1,
+                            ),
+                          ],
+                        ),
+                      ),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Container(
+                            height: 50,
+                            width: 50,
+                            child: Text(
+                              'x1',
+                              textAlign: TextAlign.end,
+                              style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w700,
+                              ),
+                            ),
+                          )
+                        ],
+                      )
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
