@@ -40,6 +40,17 @@ flutter:
     - assets/images/
     - assets/images/emptycart.png
     - assets/images/CatWatches.jpg
+    - assets/images/CatShoes.jpg
+    - assets/images/CatFurniture.jpg
+    - assets/images/CatBeauty.jpg
+    - assets/images/CatPhones.png
+    - assets/images/addidas.jpg
+    - assets/images/apple.jpg
+    - assets/images/dell.jpg
+    - assets/images/h&m.jpg
+    - assets/images/nike.jpg
+    - assets/images/samsung.jpg
+    - assets/images/huawei.jpg
     
 
  

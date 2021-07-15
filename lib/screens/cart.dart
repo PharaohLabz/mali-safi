@@ -4,9 +4,21 @@ import 'package:mali_safi/consts/my_icons.dart';
 import 'package:mali_safi/widgets/cart_empty.dart';
 import 'package:mali_safi/widgets/cart_full.dart';
 
-class CartScreen extends StatelessWidget {
+class CartScreen extends StatefulWidget {
   const CartScreen({Key key}) : super(key: key);
 
+  @override
+  _CartScreenState createState() => _CartScreenState();
+}
+
+class _CartScreenState extends State<CartScreen> {
+  String dropdownvalue = 'Standard (3-7 business days)';
+
+  var items = [
+    'Standard (3-7 business days)',
+    'G4s sevices',
+    'Pickup at the Local Distribution Office'
+  ];
   @override
   Widget build(BuildContext context) {
     List products = [];
@@ -32,7 +44,7 @@ class CartScreen extends StatelessWidget {
               ],
             ),
             body: Container(
-              height: MediaQuery.of(context).size.height * 0.5,
+              height: MediaQuery.of(context).size.height * 0.46,
               margin: EdgeInsets.only(bottom: 60),
               child: ListView.builder(
                   itemCount: 5,
@@ -45,7 +57,8 @@ class CartScreen extends StatelessWidget {
 
   Widget checkoutSection(BuildContext context) {
     return Container(
-      height: MediaQuery.of(context).size.height * 0.315,
+      height: MediaQuery.of(context).size.height * 0.38,
+      //height: 250,
       decoration: BoxDecoration(
         border: Border(
           top: BorderSide(color: Colors.grey, width: 0.5),
@@ -121,8 +134,36 @@ class CartScreen extends StatelessWidget {
                 ),
               ],
             ),
+            SizedBox(
+              height: 10,
+            ),
+            Text(
+              'Shipping method',
+              style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600),
+            ),
             Container(
-              margin: EdgeInsets.only(top: 60, left: 40, right: 40, bottom: 10),
+                margin: EdgeInsets.only(left: 10, right: 10),
+                child: Center(
+                    child: Column(children: [
+                  DropdownButton(
+                      isExpanded: true,
+                      value: dropdownvalue,
+                      icon: Icon(Icons.keyboard_arrow_down),
+                      items: items.map((String items) {
+                        return DropdownMenuItem(
+                            value: items, child: Text(items));
+                      }).toList(),
+                      onChanged: (String newValue) {
+                        setState(() {
+                          dropdownvalue = newValue;
+                        });
+                      }),
+                ]))),
+            Container(
+              margin: EdgeInsets.only(top: 30, left: 30, right: 30, bottom: 5),
               color: Colors.black.withOpacity(0.8),
               width: double.infinity,
               child: Material(
