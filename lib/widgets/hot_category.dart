@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
 
-class HotCategoryWidget extends StatelessWidget {
+class HotCategoryWidget extends StatefulWidget {
   HotCategoryWidget({Key key, this.index}) : super(key: key);
   final int index;
+
+  @override
+  _HotCategoryWidgetState createState() => _HotCategoryWidgetState();
+}
+
+class _HotCategoryWidgetState extends State<HotCategoryWidget> {
   List<Map<String, Object>> categories = [
     {
       'categoryName': 'Phones',
@@ -42,7 +48,7 @@ class HotCategoryWidget extends StatelessWidget {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
             image: DecorationImage(
-              image: AssetImage(categories[index]['cateryImagePath']),
+              image: AssetImage(categories[widget.index]['cateryImagePath']),
             ),
           ),
           margin: EdgeInsets.symmetric(horizontal: 10),
@@ -51,10 +57,13 @@ class HotCategoryWidget extends StatelessWidget {
         ),
         Positioned(
           bottom: 0,
+          left: 10,
+          right: 10,
           child: Container(
+            padding: EdgeInsets.symmetric(horizontal: 18, vertical: 8),
             color: Theme.of(context).backgroundColor,
             child: Text(
-              categories[index]['categoryName'],
+              categories[widget.index]['categoryName'],
               style: TextStyle(fontWeight: FontWeight.w500, fontSize: 18.0),
             ),
           ),

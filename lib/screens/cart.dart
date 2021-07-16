@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mali_safi/consts/colors.dart';
+
 import 'package:mali_safi/consts/my_icons.dart';
 import 'package:mali_safi/widgets/cart_empty.dart';
 import 'package:mali_safi/widgets/cart_full.dart';

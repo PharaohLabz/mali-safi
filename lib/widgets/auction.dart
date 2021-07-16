@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
 
-class AuctionWidget extends StatelessWidget {
+class AuctionWidget extends StatefulWidget {
   AuctionWidget({Key key, this.index}) : super(key: key);
   final int index;
+
+  @override
+  _AuctionWidgetState createState() => _AuctionWidgetState();
+}
+
+class _AuctionWidgetState extends State<AuctionWidget> {
   List<Map<String, Object>> categories = [
     {
       'Price': 'Ksh 299',
@@ -42,7 +48,7 @@ class AuctionWidget extends StatelessWidget {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
             image: DecorationImage(
-              image: AssetImage(categories[index]['ImagePath']),
+              image: AssetImage(categories[widget.index]['ImagePath']),
             ),
           ),
           margin: EdgeInsets.symmetric(horizontal: 10),
@@ -54,7 +60,7 @@ class AuctionWidget extends StatelessWidget {
           child: Container(
             color: Theme.of(context).backgroundColor,
             child: Text(
-              categories[index]['Price'],
+              categories[widget.index]['Price'],
               style: TextStyle(fontWeight: FontWeight.w500, fontSize: 18.0),
             ),
           ),

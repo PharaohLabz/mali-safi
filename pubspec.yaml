@@ -24,6 +24,7 @@ dependencies:
   backdrop: ^0.4.7
   carousel_pro: ^1.0.0
   flutter_swiper: ^1.1.6
+  font_awesome_flutter: ^9.1.0
 
 dev_dependencies:
   flutter_test:
@@ -44,13 +45,7 @@ flutter:
     - assets/images/CatFurniture.jpg
     - assets/images/CatBeauty.jpg
     - assets/images/CatPhones.png
-    - assets/images/addidas.jpg
-    - assets/images/apple.jpg
-    - assets/images/dell.jpg
-    - assets/images/h&m.jpg
-    - assets/images/nike.jpg
-    - assets/images/samsung.jpg
-    - assets/images/huawei.jpg
+
     
 
  
