@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class HotCategoryWidget extends StatelessWidget {
-  HotCategoryWidget({this.index});
+class TrendingDeals extends StatelessWidget {
+  TrendingDeals({this.index});
   final int index;
 
   List<Map<String, Object>> categories = [
@@ -18,7 +18,7 @@ class HotCategoryWidget extends StatelessWidget {
       'categoryImagePath': 'assets/images/CatShoes.jpg',
     },
     {
-      'categoryName': 'Beauty',
+      'categoryName': 'Beauty&Health',
       'categoryImagePath': 'assets/images/CatBeauty.jpg',
     },
     {
@@ -44,6 +44,25 @@ class HotCategoryWidget extends StatelessWidget {
             // Navigator.of(context).pushNamed(CategoriesFeedsScreen.routeName, arguments: '${categories[widget.index]['categoryName']}');
           },
           child: Container(
+            //height: 100,
+            width: 150,
+            padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+            //color: Theme.of(context).backgroundColor,
+            child: Text(
+              categories[index]['categoryName'],
+              style: TextStyle(
+                fontWeight: FontWeight.w500,
+                fontSize: 18,
+                //color: Theme.of(context).textSelectionColor,
+              ),
+            ),
+          ),
+        ),
+        Positioned(
+          left: 10,
+          bottom: 0.0,
+          right: 10,
+          child: Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
               image: DecorationImage(
@@ -56,23 +75,6 @@ class HotCategoryWidget extends StatelessWidget {
             margin: EdgeInsets.symmetric(horizontal: 10),
             width: 100,
             height: 100,
-          ),
-        ),
-        Positioned(
-          left: 10,
-          bottom: 0.0,
-          right: 10,
-          child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-            //color: Theme.of(context).backgroundColor,
-            child: Text(
-              categories[index]['categoryName'],
-              style: TextStyle(
-                fontWeight: FontWeight.w500,
-                fontSize: 18,
-                //color: Theme.of(context).textSelectionColor,
-              ),
-            ),
           ),
         ),
       ],

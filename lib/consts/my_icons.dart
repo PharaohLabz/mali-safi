@@ -9,7 +9,7 @@ class MyAppIcons {
   static IconData user = Feather.user;
   static IconData bag = Feather.shopping_bag;
   static IconData bag2 = MaterialCommunityIcons.cart;
-  static IconData explore = Feather.rss;
+  static IconData explore = MaterialIcons.widgets;
 
   static IconData trash = Feather.trash;
 }

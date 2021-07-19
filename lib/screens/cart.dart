@@ -5,6 +5,7 @@ import 'package:mali_safi/widgets/cart_empty.dart';
 import 'package:mali_safi/widgets/cart_full.dart';
 
 class CartScreen extends StatefulWidget {
+  static const routeName = '/CartScreen';
   const CartScreen({Key key}) : super(key: key);
 
   @override

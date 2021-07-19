@@ -30,7 +30,7 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
         'page': HomeScreen(),
       },
       {
-        'page': SearchScreen(),
+        'page': Feeds(),
       },
       {
         'page': CartScreen(),
