@@ -1,9 +1,12 @@
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'package:mali_safi/consts/colors.dart';
 import 'package:mali_safi/consts/my_icons.dart';
+import 'package:mali_safi/screens/cart.dart';
+import 'package:mali_safi/screens/search.dart';
 import 'package:mali_safi/widgets/auction.dart';
 import 'package:mali_safi/widgets/feeds_products.dart';
 import 'package:mali_safi/widgets/hot_category.dart';
@@ -27,14 +30,22 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        leading: Icon(Feather.menu),
+        leading: IconButton(icon: Icon(Feather.menu), onPressed: () {}),
         title: Text('HOME'),
         actions: [
-          Icon(MyAppIcons.search),
+          GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context, SearchScreen.routeName);
+              },
+              child: Icon(MyAppIcons.search)),
           SizedBox(
             width: 10,
           ),
-          Icon(MyAppIcons.favorite),
+          GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context, CartScreen.routeName);
+              },
+              child: Icon(MyAppIcons.cart)),
           SizedBox(
             width: 10,
           ),
@@ -72,7 +83,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       animationCurve: Curves.fastOutSlowIn,
                       animationDuration: Duration(milliseconds: 1000),
                       dotSize: 5.0,
-                      dotIncreasedColor: ColorsConsts.cartColor,
+                      dotIncreasedColor: ColorsConsts.subTitle,
                       dotBgColor: Colors.transparent,
                       dotPosition: DotPosition.bottomCenter,
                       //dotVerticalPadding: 10.0,

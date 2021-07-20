@@ -252,7 +252,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                 IconButton(
                   icon: Icon(
                     MyAppIcons.favorite,
-                    color: ColorsConsts.favColor,
+                    color: ColorsConsts.black,
                   ),
                   onPressed: () {
                     //Navigator.of(context).pushNamed(WishlistScreen.routeName);
@@ -261,7 +261,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                 IconButton(
                   icon: Icon(
                     MyAppIcons.cart,
-                    color: ColorsConsts.cartColor,
+                    color: ColorsConsts.black,
                   ),
                   onPressed: () {
                     //Navigator.of(context).pushNamed(CartScreen.routeName);
@@ -328,7 +328,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                           : ColorsConsts.subTitle,
                       height: 50,
                       child: InkWell(
-                        splashColor: ColorsConsts.favColor,
+                        splashColor: ColorsConsts.black,
                         onTap: () {},
                         child: Center(
                           child: Icon(

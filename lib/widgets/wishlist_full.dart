@@ -80,7 +80,7 @@ class _WishlistFullState extends State<WishlistFull> {
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
           padding: EdgeInsets.all(0.0),
-          color: ColorsConsts.favColor,
+          color: ColorsConsts.black,
           child: Icon(
             Icons.clear,
             color: Colors.white,

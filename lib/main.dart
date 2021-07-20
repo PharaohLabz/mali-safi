@@ -3,6 +3,7 @@ import 'package:mali_safi/consts/colors.dart';
 import 'package:mali_safi/screens/cart.dart';
 import 'package:mali_safi/screens/explore.dart';
 import 'package:mali_safi/screens/favourite.dart';
+import 'package:mali_safi/screens/search.dart';
 
 import 'botton_bar.dart';
 
@@ -19,7 +20,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Mali Safi',
       theme: ThemeData(
-        primaryColor: ColorsConsts.kPrimaryColor,
+        scaffoldBackgroundColor: ColorsConsts.backgroundColor,
+        primaryColor: ColorsConsts.primaryColor,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: BottomBarScreen(),

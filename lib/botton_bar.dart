@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:mali_safi/consts/colors.dart';
+import 'package:mali_safi/screens/add_screen.dart';
 import 'package:mali_safi/screens/cart.dart';
+import 'package:mali_safi/screens/categoiesScreen.dart';
 import 'package:mali_safi/screens/favourite.dart';
 import 'package:mali_safi/screens/home.dart';
 import 'package:mali_safi/screens/explore.dart';
@@ -33,13 +36,13 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
         'page': Feeds(),
       },
       {
-        'page': CartScreen(),
+        'page': AddScreen(),
+      },
+      {
+        'page': CategoriesScreen(),
       },
       {
         'page': FavouriteScreen(),
-      },
-      {
-        'page': UserInfoScreen(),
       },
     ];
     super.initState();
@@ -69,8 +72,8 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
           child: BottomNavigationBar(
               onTap: _selectedPage,
               backgroundColor: Theme.of(context).primaryColor,
-              unselectedItemColor: Colors.black.withOpacity(0.8),
-              selectedItemColor: Colors.black.withOpacity(0.6),
+              unselectedItemColor: ColorsConsts.subTitle,
+              selectedItemColor: ColorsConsts.black,
               currentIndex: _selectedIndex,
               items: [
                 BottomNavigationBarItem(
@@ -78,21 +81,25 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
                     tooltip: 'Home',
                     label: 'Home'),
                 BottomNavigationBarItem(
-                    icon: Icon(MyAppIcons.explore),
+                    icon: Icon(MyAppIcons.discover),
                     tooltip: 'Explore',
                     label: 'Explore'),
                 BottomNavigationBarItem(
-                    icon: Icon(MyAppIcons.bag2),
-                    tooltip: 'Cart',
-                    label: 'Cart'),
+                  icon: Icon(
+                    MyAppIcons.add,
+                    size: 35,
+                  ),
+                  tooltip: 'Add',
+                  label: 'Add',
+                ),
+                BottomNavigationBarItem(
+                    icon: Icon(MyAppIcons.explore),
+                    tooltip: 'Categories',
+                    label: 'Categories'),
                 BottomNavigationBarItem(
                     icon: Icon(MyAppIcons.favorite),
                     tooltip: 'Favorite',
                     label: 'Favorite'),
-                BottomNavigationBarItem(
-                    icon: Icon(MyAppIcons.user),
-                    tooltip: 'Account',
-                    label: 'Account'),
               ]),
         ),
       ),
