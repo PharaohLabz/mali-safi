@@ -53,13 +53,14 @@ class WishListEmpty extends StatelessWidget {
             onPressed: () {},
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(16),
-              side: BorderSide(color: Colors.red),
+              side: BorderSide(color: Colors.grey),
             ),
-            color: Colors.redAccent,
+            color: ColorsConsts.subTitle,
             child: Text(
               'Add a wish'.toUpperCase(),
               textAlign: TextAlign.center,
               style: TextStyle(
+                color: ColorsConsts.white,
                 fontSize: 26,
                 fontWeight: FontWeight.w600,
               ),

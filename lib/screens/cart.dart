@@ -48,7 +48,7 @@ class _CartScreenState extends State<CartScreen> {
               height: MediaQuery.of(context).size.height * 0.46,
               margin: EdgeInsets.only(bottom: 60),
               child: ListView.builder(
-                  itemCount: 5,
+                  itemCount: 7,
                   itemBuilder: (BuildContext ctx, int index) {
                     return CartFull();
                   }),
@@ -58,15 +58,17 @@ class _CartScreenState extends State<CartScreen> {
 
   Widget checkoutSection(BuildContext context) {
     return Container(
-      height: MediaQuery.of(context).size.height * 0.38,
-      //height: 250,
+      height: MediaQuery.of(context).size.height * 0.42,
+      //height: 250,f
       decoration: BoxDecoration(
         border: Border(
-          top: BorderSide(color: Colors.grey, width: 0.5),
+          top: BorderSide(
+            color: Colors.grey,
+          ),
         ),
       ),
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(4.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

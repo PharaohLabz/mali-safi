@@ -13,51 +13,54 @@ class _WishlistFullState extends State<WishlistFull> {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Container(
-          width: double.infinity,
-          margin: EdgeInsets.only(
-            right: 30.0,
-            bottom: 10.0,
-          ),
-          child: Material(
-            color: Theme.of(context).backgroundColor,
-            borderRadius: BorderRadius.circular(5.0),
-            elevation: 3.0,
-            child: InkWell(
-              onTap: () {},
-              child: Container(
-                padding: EdgeInsets.all(16.0),
-                child: Row(
-                  children: [
-                    Container(
-                      height: 80,
-                      child: Image(
-                        image: AssetImage('assets/images/CatShoes.jpg'),
+        Padding(
+          padding: const EdgeInsets.only(top: 3, left: 3),
+          child: Container(
+            width: double.infinity,
+            margin: EdgeInsets.only(
+              right: 30.0,
+              bottom: 10.0,
+            ),
+            child: Material(
+              color: ColorsConsts.primaryColor,
+              borderRadius: BorderRadius.circular(5.0),
+              elevation: 3.0,
+              child: InkWell(
+                onTap: () {},
+                child: Container(
+                  padding: EdgeInsets.all(16.0),
+                  child: Row(
+                    children: [
+                      Container(
+                        height: 80,
+                        child: Image(
+                          image: AssetImage('assets/images/CatShoes.jpg'),
+                        ),
                       ),
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Expanded(
-                        child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'title',
-                          style: TextStyle(
-                              fontSize: 16.0, fontWeight: FontWeight.bold),
-                        ),
-                        SizedBox(
-                          height: 20.0,
-                        ),
-                        Text(
-                          '\Ksh 1600',
-                          style: TextStyle(
-                              fontSize: 18.0, fontWeight: FontWeight.bold),
-                        ),
-                      ],
-                    ))
-                  ],
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Expanded(
+                          child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'title',
+                            style: TextStyle(
+                                fontSize: 16.0, fontWeight: FontWeight.bold),
+                          ),
+                          SizedBox(
+                            height: 20.0,
+                          ),
+                          Text(
+                            '\Ksh 1600',
+                            style: TextStyle(
+                                fontSize: 18.0, fontWeight: FontWeight.bold),
+                          ),
+                        ],
+                      ))
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -80,7 +83,7 @@ class _WishlistFullState extends State<WishlistFull> {
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
           padding: EdgeInsets.all(0.0),
-          color: ColorsConsts.black,
+          color: ColorsConsts.subTitle,
           child: Icon(
             Icons.clear,
             color: Colors.white,

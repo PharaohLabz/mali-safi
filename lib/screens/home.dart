@@ -1,15 +1,15 @@
-import 'package:carousel_pro/carousel_pro.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'package:mali_safi/consts/colors.dart';
 import 'package:mali_safi/consts/my_icons.dart';
+import 'package:mali_safi/consts/padding.dart';
 import 'package:mali_safi/screens/cart.dart';
 import 'package:mali_safi/screens/search.dart';
 import 'package:mali_safi/widgets/auction.dart';
-import 'package:mali_safi/widgets/feeds_products.dart';
-import 'package:mali_safi/widgets/hot_category.dart';
+import 'package:mali_safi/widgets/new_arrivals.dart';
+import 'package:mali_safi/widgets/recommendation.dart';
+import 'package:mali_safi/widgets/scrollable_appbar.dart';
 import 'package:mali_safi/widgets/trending_deals.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -28,262 +28,202 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-        leading: IconButton(icon: Icon(Feather.menu), onPressed: () {}),
-        title: Text('HOME'),
-        actions: [
-          GestureDetector(
-              onTap: () {
-                Navigator.pushNamed(context, SearchScreen.routeName);
-              },
-              child: Icon(MyAppIcons.search)),
-          SizedBox(
-            width: 10,
-          ),
-          GestureDetector(
-              onTap: () {
-                Navigator.pushNamed(context, CartScreen.routeName);
-              },
-              child: Icon(MyAppIcons.cart)),
-          SizedBox(
-            width: 10,
-          ),
-          CircleAvatar(
-            radius: 15,
-            backgroundImage: AssetImage(
-              'assets/images/CatLaptops.png',
+      appBar: topAppBar(),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            TitleWithMoreBtn(
+              title: 'Trending Auctions',
+              press: () {},
             ),
+            topCardBars(),
+            auctionWidget(),
+            TitleWithMoreBtn(
+              title: 'Recommendation',
+              press: () {},
+            ),
+            recommendation(),
+            TitleWithMoreBtn(
+              title: 'New Arrivals',
+              press: () {},
+            ),
+            newArrivals(),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget newArrivals() {
+    return Container(
+      width: double.infinity,
+      height: MediaQuery.of(context).size.height * 0.37,
+      //margin: EdgeInsets.symmetric(horizontal: 3.0),
+      child: ListView.builder(
+        scrollDirection: Axis.horizontal,
+        itemCount: 6,
+        itemBuilder: (BuildContext ctx, int index) {
+          return NewArrivals(
+            index: index,
+          );
+        },
+      ),
+    );
+  }
+
+  Widget recommendation() {
+    return Container(
+      width: double.infinity,
+      height: MediaQuery.of(context).size.height * 0.37,
+      //margin: EdgeInsets.symmetric(horizontal: 3.0),
+      child: ListView.builder(
+        scrollDirection: Axis.horizontal,
+        itemCount: 6,
+        itemBuilder: (BuildContext ctx, int index) {
+          return Recommendation(
+            index: index,
+          );
+        },
+      ),
+    );
+  }
+
+  Widget topCardBars() {
+    return Container(
+      width: double.infinity,
+      height: 50,
+      //margin: EdgeInsets.symmetric(horizontal: 3.0),
+      child: ListView.builder(
+        scrollDirection: Axis.horizontal,
+        itemCount: 6,
+        itemBuilder: (BuildContext ctx, int index) {
+          return TopCardBars(
+            index: index,
+          );
+        },
+      ),
+    );
+  }
+
+  Widget auctionWidget() {
+    return Container(
+      width: double.infinity,
+      height: MediaQuery.of(context).size.height * 0.3,
+      margin: EdgeInsets.symmetric(horizontal: 3.0, vertical: 3.0),
+      child: ListView.builder(
+        scrollDirection: Axis.horizontal,
+        itemCount: 8,
+        itemBuilder: (BuildContext ctx, int index) {
+          return AuctionWidget(
+            index: index,
+          );
+        },
+      ),
+    );
+  }
+
+  AppBar topAppBar() {
+    return AppBar(
+      elevation: 0,
+      leading: IconButton(icon: Icon(Feather.menu), onPressed: () {}),
+      title: Text('HOME'),
+      actions: [
+        GestureDetector(
+            onTap: () {
+              Navigator.pushNamed(context, SearchScreen.routeName);
+            },
+            child: Icon(MyAppIcons.search)),
+        SizedBox(
+          width: 10,
+        ),
+        GestureDetector(
+            onTap: () {
+              Navigator.pushNamed(context, CartScreen.routeName);
+            },
+            child: Icon(MyAppIcons.cart)),
+        SizedBox(
+          width: 10,
+        ),
+        CircleAvatar(
+          radius: 15,
+          backgroundImage: AssetImage(
+            'assets/images/CatLaptops.png',
           ),
-          SizedBox(
-            width: 5,
+        ),
+        SizedBox(
+          width: 5,
+        ),
+      ],
+    );
+  }
+}
+
+class TitleWithMoreBtn extends StatelessWidget {
+  const TitleWithMoreBtn({
+    this.press,
+    this.title,
+    Key key,
+  }) : super(key: key);
+  final String title;
+  final Function press;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(top: 3, left: 8, right: 8),
+      child: Row(
+        children: [
+          TitleWithCustomeUnderline(
+            text: title,
+          ),
+          Spacer(),
+          FlatButton(
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+            color: ColorsConsts.primaryColor,
+            onPressed: press,
+            child: Text(
+              'View all',
+              style: TextStyle(color: Colors.black),
+            ),
           ),
         ],
       ),
-      body: Container(
-        color: Colors.black.withOpacity(0.2),
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: SingleChildScrollView(
-            scrollDirection: Axis.vertical,
-            child: Column(
-              children: [
-                Container(
-                  height: 120,
-                  width: double.infinity,
-                  // decoration:
-                  //     BoxDecoration(borderRadius: BorderRadius.circular(30)),
-                  child: Padding(
-                    padding: const EdgeInsets.all(1.0),
-                    child: Carousel(
-                      borderRadius: true,
-                      radius: Radius.circular(20),
-                      boxFit: BoxFit.fill,
-                      autoplay: true,
-                      animationCurve: Curves.fastOutSlowIn,
-                      animationDuration: Duration(milliseconds: 1000),
-                      dotSize: 5.0,
-                      dotIncreasedColor: ColorsConsts.subTitle,
-                      dotBgColor: Colors.transparent,
-                      dotPosition: DotPosition.bottomCenter,
-                      //dotVerticalPadding: 10.0,
-                      showIndicator: true,
-                      indicatorBgPadding: 7.0,
-                      images: [
-                        AssetImage(_carouselImages[0]),
-                        AssetImage(_carouselImages[1]),
-                        AssetImage(_carouselImages[2]),
-                        AssetImage(_carouselImages[3]),
-                      ],
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(
-                    bottom: 5,
-                    top: 5,
-                  ),
-                  child: Container(
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
-                        color: ColorsConsts.white),
-                    child: Padding(
-                      padding: const EdgeInsets.all(4.0),
-                      child: Column(
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                'Auction Ends in ',
-                                style: TextStyle(
-                                    fontWeight: FontWeight.w800, fontSize: 20),
-                              ),
-                              Text('00:00:00',
-                                  style: TextStyle(
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.w400)),
-                              Material(
-                                color: Colors.transparent,
-                                child: InkWell(
-                                  splashColor: Theme.of(context).splashColor,
-                                  onTap: () {},
-                                  child: Row(
-                                    children: [
-                                      Text('more'),
-                                      Icon(Feather.more_horizontal),
-                                    ],
-                                  ),
-                                ),
-                              )
-                            ],
-                          ),
-                          Container(
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10)),
-                            width: double.infinity,
-                            height: 130,
-                            child: ListView.builder(
-                              itemCount: 6,
-                              scrollDirection: Axis.horizontal,
-                              itemBuilder: (BuildContext ctx, int index) {
-                                return AuctionWidget(
-                                  index: index,
-                                );
-                              },
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(
-                    bottom: 5,
-                    top: 5,
-                  ),
-                  child: Container(
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
-                        color: ColorsConsts.white),
-                    child: Padding(
-                      padding: const EdgeInsets.all(4.0),
-                      child: Column(
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                'Trending Deals ',
-                                style: TextStyle(
-                                    fontWeight: FontWeight.w800, fontSize: 20),
-                              ),
-                              Material(
-                                color: Colors.transparent,
-                                child: InkWell(
-                                  splashColor: Theme.of(context).splashColor,
-                                  onTap: () {},
-                                  child: Row(
-                                    children: [
-                                      Text('more'),
-                                      Icon(Feather.more_horizontal),
-                                    ],
-                                  ),
-                                ),
-                              )
-                            ],
-                          ),
-                          Container(
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10)),
-                            width: double.infinity,
-                            height: 130,
-                            child: ListView.builder(
-                              itemCount: 6,
-                              scrollDirection: Axis.horizontal,
-                              itemBuilder: (BuildContext ctx, int index) {
-                                return TrendingDeals(
-                                  index: index,
-                                );
-                              },
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(bottom: 5),
-                  child: Container(
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
-                        color: ColorsConsts.white),
-                    child: Padding(
-                      padding: const EdgeInsets.all(4.0),
-                      child: Column(
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                'Hot Category ',
-                                style: TextStyle(
-                                    fontWeight: FontWeight.w800, fontSize: 20),
-                              ),
-                              Material(
-                                color: Colors.transparent,
-                                child: InkWell(
-                                  splashColor: Theme.of(context).splashColor,
-                                  onTap: () {},
-                                  child: Row(
-                                    children: [
-                                      Text('more'),
-                                      Icon(Feather.more_horizontal),
-                                    ],
-                                  ),
-                                ),
-                              )
-                            ],
-                          ),
-                          Container(
-                            width: double.infinity,
-                            height: 130,
-                            child: ListView.builder(
-                              itemCount: 6,
-                              scrollDirection: Axis.horizontal,
-                              itemBuilder: (BuildContext ctx, int index) {
-                                return HotCategoryWidget(
-                                  index: index,
-                                );
-                              },
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-                /* Text(
-                  'You may also Like',
-                  style: TextStyle(fontWeight: FontWeight.w800, fontSize: 20),
-                ),
-                Container(
-                  child: GridView.count(
-                    crossAxisCount: 2,
-                    childAspectRatio: 240 / 290,
-                    crossAxisSpacing: 8,
-                    mainAxisSpacing: 8,
-                    children: List.generate(100, (index) {
-                      return FeedsProduct();
-                    }),
-                  ),
-                ) */
-              ],
+    );
+  }
+}
+
+class TitleWithCustomeUnderline extends StatelessWidget {
+  const TitleWithCustomeUnderline({
+    this.text,
+    Key key,
+  }) : super(key: key);
+  final String text;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 24,
+      child: Stack(
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(left: defaultPadding / 4),
+            child: Text(
+              text,
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
           ),
-        ),
+          Positioned(
+            bottom: 0,
+            left: 0,
+            right: 0,
+            child: Container(
+              margin: EdgeInsets.only(right: defaultPadding / 4),
+              height: 7,
+              color: ColorsConsts.primaryColor.withOpacity(0.2),
+            ),
+          )
+        ],
       ),
     );
   }
