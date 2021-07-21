@@ -4,6 +4,9 @@ The mali-safi way. The only online shop app that sorts your needs instantly. All
 
 ## Progress images
 ![Cart screen](https://github.com/PharaohLabz/mali-safi/blob/master/flutter_01.png)
+![Home screen](https://github.com/PharaohLabz/mali-safi/blob/master/flutter_02.png)
+![Cart screen](https://github.com/PharaohLabz/mali-safi/blob/master/flutter_03.png)
+![Cart screen](https://github.com/PharaohLabz/mali-safi/blob/master/flutter_04.png)
 
 
 If you need to get started with learning flutter use the resources below
