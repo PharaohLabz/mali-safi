@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+
 import 'package:mali_safi/consts/colors.dart';
-import 'package:mali_safi/provider/dark_theme_provider.dart';
 
 class WishListEmpty extends StatelessWidget {
   const WishListEmpty({Key key}) : super(key: key);

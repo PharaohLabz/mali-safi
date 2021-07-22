@@ -2,10 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:mali_safi/consts/colors.dart';
 import 'package:mali_safi/consts/padding.dart';
 
-class Body extends StatelessWidget {
+class Body extends StatefulWidget {
   Body({Key key, this.index}) : super(key: key);
   final int index;
 
+  @override
+  _BodyState createState() => _BodyState();
+}
+
+class _BodyState extends State<Body> {
   List<Map<String, Object>> carouselDeatails = [
     {
       'imagePath': 'assets/images/CatBeauty.jpg',

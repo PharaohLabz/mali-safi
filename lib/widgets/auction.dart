@@ -2,10 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:mali_safi/consts/colors.dart';
 
-class AuctionWidget extends StatelessWidget {
+class AuctionWidget extends StatefulWidget {
   AuctionWidget({this.index});
   final int index;
 
+  @override
+  _AuctionWidgetState createState() => _AuctionWidgetState();
+}
+
+class _AuctionWidgetState extends State<AuctionWidget> {
   List<Map<String, Object>> auction = [
     {
       'price': 'Ksh 500',

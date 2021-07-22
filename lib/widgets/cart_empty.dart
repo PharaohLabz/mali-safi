@@ -50,13 +50,13 @@ class CartEmpty extends StatelessWidget {
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(16),
                 side: BorderSide(color: Colors.grey)),
-            color: Colors.lightGreenAccent,
+            color: Colors.black.withOpacity(0.6),
             child: Text(
               'shop now'.toUpperCase(),
               textAlign: TextAlign.center,
               style: TextStyle(
                   fontSize: 26,
-                  color: ColorsConsts.black,
+                  color: ColorsConsts.white,
                   fontWeight: FontWeight.w600),
             ),
           ),

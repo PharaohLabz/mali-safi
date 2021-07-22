@@ -5,7 +5,6 @@ import 'package:mali_safi/inner_screens/product_detail.dart';
 import 'package:provider/provider.dart';
 
 import 'package:mali_safi/models/product.dart';
-import 'package:mali_safi/provider/products.dart';
 
 class FeedsProduct extends StatefulWidget {
   @override
@@ -100,7 +99,7 @@ class _FeedsProductState extends State<FeedsProduct> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text( 
+                        Text(
                           'Quantity: ${productAttributes.quantity}',
                           style: TextStyle(
                             fontSize: 12,

@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 
-class TrendingDeals extends StatelessWidget {
+class TrendingDeals extends StatefulWidget {
   TrendingDeals({this.index});
   final int index;
 
+  @override
+  _TrendingDealsState createState() => _TrendingDealsState();
+}
+
+class _TrendingDealsState extends State<TrendingDeals> {
   List<Map<String, Object>> categories = [
     {
       'categoryName': 'Phones',
@@ -49,7 +54,7 @@ class TrendingDeals extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
             //color: Theme.of(context).backgroundColor,
             child: Text(
-              categories[index]['categoryName'],
+              categories[widget.index]['categoryName'],
               style: TextStyle(
                 fontWeight: FontWeight.w500,
                 fontSize: 18,
@@ -67,7 +72,7 @@ class TrendingDeals extends StatelessWidget {
               borderRadius: BorderRadius.circular(10),
               image: DecorationImage(
                 image: AssetImage(
-                  categories[index]['categoryImagePath'],
+                  categories[widget.index]['categoryImagePath'],
                 ),
                 fit: BoxFit.cover,
               ),

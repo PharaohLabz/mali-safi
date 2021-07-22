@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
+import 'package:flutter_swiper/flutter_swiper.dart';
 
 import 'package:mali_safi/consts/colors.dart';
 import 'package:mali_safi/consts/my_icons.dart';
@@ -10,7 +11,6 @@ import 'package:mali_safi/widgets/auction.dart';
 import 'package:mali_safi/widgets/new_arrivals.dart';
 import 'package:mali_safi/widgets/recommendation.dart';
 import 'package:mali_safi/widgets/scrollable_appbar.dart';
-import 'package:mali_safi/widgets/trending_deals.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -18,12 +18,12 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  List _carouselImages = [
+  /* List _carouselImages = [
     'assets/images/CatBeauty.jpg',
     'assets/images/CatFurniture.jpg',
     'assets/images/CatPhones.png',
     'assets/images/CatShoes.jpg'
-  ];
+  ]; */
 
   @override
   Widget build(BuildContext context) {
@@ -107,11 +107,13 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Widget auctionWidget() {
     return Container(
-      width: double.infinity,
+      width: MediaQuery.of(context).size.width * 0.8,
       height: MediaQuery.of(context).size.height * 0.3,
       margin: EdgeInsets.symmetric(horizontal: 3.0, vertical: 3.0),
-      child: ListView.builder(
-        scrollDirection: Axis.horizontal,
+      child: Swiper(
+        //scrollDirection: Axis.horizontal,
+        autoplay: true,
+        onTap: (index) {},
         itemCount: 8,
         itemBuilder: (BuildContext ctx, int index) {
           return AuctionWidget(

@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mali_safi/widgets/explore.dart';
 
-import 'package:mali_safi/widgets/feeds_products.dart';
-
 class Feeds extends StatelessWidget {
   static const routeName = '/Feeds';
   @override
