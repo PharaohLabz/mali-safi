@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mali_safi/consts/colors.dart';
+import 'package:mali_safi/inner_screens/product_detail.dart';
 import 'package:mali_safi/screens/cart.dart';
 import 'package:mali_safi/screens/explore.dart';
 import 'package:mali_safi/screens/favourite.dart';
@@ -32,6 +33,7 @@ class MyApp extends StatelessWidget {
         CartScreen.routeName: (ctx) => CartScreen(),
         Feeds.routeName: (ctx) => Feeds(),
         FavouriteScreen.routeName: (ctx) => FavouriteScreen(),
+        ProductDetails.routeName: (ctx) => ProductDetails(),
       },
     );
   }

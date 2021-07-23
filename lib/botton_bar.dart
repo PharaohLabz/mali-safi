@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:mali_safi/consts/colors.dart';
 import 'package:mali_safi/screens/add_screen.dart';
-import 'package:mali_safi/screens/cart.dart';
+
 import 'package:mali_safi/screens/categoiesScreen.dart';
 import 'package:mali_safi/screens/favourite.dart';
 import 'package:mali_safi/screens/home.dart';
 import 'package:mali_safi/screens/explore.dart';
-import 'package:mali_safi/screens/user_info.dart';
 
 import 'consts/my_icons.dart';
 

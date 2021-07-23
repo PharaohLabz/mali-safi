@@ -107,7 +107,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Widget auctionWidget() {
     return Container(
-      width: MediaQuery.of(context).size.width * 0.8,
+      width: double.infinity,
       height: MediaQuery.of(context).size.height * 0.3,
       margin: EdgeInsets.symmetric(horizontal: 3.0, vertical: 3.0),
       child: Swiper(

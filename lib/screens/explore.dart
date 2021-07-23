@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:mali_safi/widgets/explore.dart';
 
 class Feeds extends StatelessWidget {
@@ -6,7 +7,8 @@ class Feeds extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView.builder(
+      body:
+          /* ListView.builder(
         scrollDirection: Axis.vertical,
         itemCount: 100,
         itemBuilder: (BuildContext ctx, int index) {
@@ -14,27 +16,27 @@ class Feeds extends StatelessWidget {
             index: index,
           );
         },
-      ),
-      /* GridView.count(
-      crossAxisCount: 2,
-      childAspectRatio: 210 / 290,
-      crossAxisSpacing: 8,
-      mainAxisSpacing: 8,
-      children: List.generate(100, (index) {
-        return Explore();
-      }),
-    ) */
+      ), */
+          //         GridView.count(
+          //   crossAxisCount: 2,
+          //   childAspectRatio: 240 / 420,
+          //   crossAxisSpacing: 8,
+          //   mainAxisSpacing: 8,
+          //   children: List.generate(100, (index) {
+          //     return Explore();
+          //   }),
+          // )
 
-//         StaggeredGridView.countBuilder(
-//           padding: ,
-//   crossAxisCount: 6,
-//   itemCount: 8,
-//   itemBuilder: (BuildContext context, int index) =>FeedProducts(),
-//   staggeredTileBuilder: (int index) =>
-//       new StaggeredTile.count(3, index.isEven ? 4 : 5),
-//   mainAxisSpacing: 8.0,
-//   crossAxisSpacing: 6.0,
-// ),
+          StaggeredGridView.countBuilder(
+        //padding: ,
+        crossAxisCount: 6,
+        itemCount: 100,
+        itemBuilder: (BuildContext context, int index) => Explore(),
+        staggeredTileBuilder: (int index) =>
+            new StaggeredTile.count(2, index.isEven ? 3 : 4),
+        mainAxisSpacing: 8.0,
+        crossAxisSpacing: 6.0,
+      ),
     );
   }
 }

@@ -45,9 +45,10 @@ class _AuctionWidgetState extends State<AuctionWidget> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 8.0, left: 8.0, right: 8.0),
+      padding:
+          const EdgeInsets.only(top: 3, bottom: 8.0, left: 8.0, right: 8.0),
       child: Container(
-        width: MediaQuery.of(context).size.width * 0.8,
+        width: MediaQuery.of(context).size.width * 0.7,
         decoration: BoxDecoration(
           color: ColorsConsts.primaryColor,
           borderRadius: BorderRadius.only(
